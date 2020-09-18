@@ -88,6 +88,7 @@ export default class extends React.Component<IProps, Partial<IState>> {
   // componentDidUpdate(prevProps, prevState)
   componentDidUpdate(prevProps: IProps, prevState: IState) {
    
+    // J: -> This is the only change in this fork.
     this.table && this.table.destroy();
     this.componentDidMount();
  
