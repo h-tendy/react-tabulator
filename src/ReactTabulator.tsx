@@ -87,6 +87,10 @@ export default class extends React.Component<IProps, Partial<IState>> {
 
   // componentDidUpdate(prevProps, prevState)
   componentDidUpdate(prevProps: IProps, prevState: IState) {
+   
+    this.table && this.table.destroy();
+    this.componentDidMount();
+ 
     // props data changed! (see: getDerivedStateFromProps)
     if (!isSameArray(prevState.data, this.state.data)) {
       // only when data is really different: call this.table.setData (will re-render table)
