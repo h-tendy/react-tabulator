@@ -28,7 +28,8 @@ export default class extends React.Component<IProps, Partial<IState>> {
     const that = this;
     const { columns, data, options } = this.props;
     const propOptions = await propsToOptions(this.props);
-
+    // J:-> Needed for dynamic switching between fixed and variable height.
+    domEle.style.height = "auto";
     new Tabulator(domEle, {
       columns,
       ...propOptions,
